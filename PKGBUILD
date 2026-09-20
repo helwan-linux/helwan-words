@@ -1,13 +1,13 @@
 # Maintainer: Saeed Badreldin <saeed@helwanlinux.org>
 
-pkgname=helwan-words
+pkgname=hel-words
 pkgver=1.0.0
 pkgrel=1
 
 pkgdesc="Multilingual word guessing game for Helwan Linux"
 arch=('x86_64')
 
-url="https://github.com/helwan-linux/helwan-games"
+url="https://github.com/helwan-linux/helwan-words"
 license=('GPL3')
 
 depends=('gtk3')
