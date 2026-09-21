@@ -24,7 +24,6 @@ static void load_css(void)
 GtkCssProvider *provider =
 gtk_css_provider_new();
 
-```
 GError *error = NULL;
 
 gtk_css_provider_load_from_path(
@@ -308,7 +307,6 @@ if (!loaded) {
 }
 
 update_ui(ui);
-```
 
 }
 
@@ -318,11 +316,9 @@ gpointer user_data)
 {
 (void)button;
 
-```
 AppUI *ui = user_data;
 
 new_game(ui);
-```
 
 }
 
@@ -332,12 +328,10 @@ gpointer user_data)
 {
 (void)button;
 
-```
 AppUI *ui = user_data;
 
 if (game_buy_extra_attempt(ui->game))
     update_ui(ui);
-```
 
 }
 
@@ -347,13 +341,11 @@ gpointer user_data)
 {
 (void)button;
 
-```
 AppUI *ui = user_data;
 
 show_help_dialog(
     GTK_WINDOW(ui->window)
 );
-```
 
 }
 
@@ -363,13 +355,11 @@ gpointer user_data)
 {
 (void)button;
 
-```
 AppUI *ui = user_data;
 
 show_about_dialog(
     GTK_WINDOW(ui->window)
 );
-```
 
 }
 
@@ -379,7 +369,6 @@ gpointer user_data)
 {
 AppUI *ui = user_data;
 
-```
 gint active =
     gtk_combo_box_get_active(
         GTK_COMBO_BOX(combo)
@@ -394,7 +383,6 @@ else
 
 set_language_direction(ui);
 new_game(ui);
-```
 
 }
 
@@ -402,7 +390,6 @@ static void set_penguin_image(AppUI *ui)
 {
 GError *error = NULL;
 
-```
 GdkPixbuf *pixbuf =
     gdk_pixbuf_new_from_file_at_scale(
         ICON_PATH,
@@ -431,7 +418,6 @@ gtk_image_set_from_icon_name(
     "face-smile",
     GTK_ICON_SIZE_DIALOG
 );
-```
 
 }
 
@@ -441,7 +427,6 @@ AppUI *ui)
 guint wrong =
 game_get_wrong_guesses(ui->game);
 
-```
 gchar *markup = NULL;
 
 if (wrong == 0) {
@@ -480,7 +465,6 @@ gtk_label_set_text(
 );
 
 g_free(markup);
-```
 
 }
 
@@ -489,7 +473,6 @@ static void update_ui(AppUI *ui)
 if (!ui || !ui->game)
 return;
 
-```
 const gchar *display =
     game_get_display_word(ui->game);
 
@@ -604,7 +587,6 @@ if (state == GAME_LOST) {
 
     g_list_free(children);
 }
-```
 
 }
 
@@ -613,7 +595,6 @@ static GtkWidget *create_title(void)
 GtkWidget *label =
 gtk_label_new(NULL);
 
-```
 gtk_label_set_markup(
     GTK_LABEL(label),
     "<span size='xx-large' weight='bold'>Helwan Words</span>"
@@ -625,7 +606,6 @@ gtk_widget_set_halign(
 );
 
 return label;
-```
 
 }
 
@@ -635,7 +615,6 @@ AppUI *ui)
 GtkWidget *combo =
 gtk_combo_box_text_new();
 
-```
 gtk_combo_box_text_append_text(
     GTK_COMBO_BOX_TEXT(combo),
     "العربية"
@@ -664,7 +643,6 @@ g_signal_connect(
 );
 
 return combo;
-```
 
 }
 
@@ -677,7 +655,6 @@ GTK_ORIENTATION_VERTICAL,
 8
 );
 
-```
 gtk_widget_set_margin_start(
     outer,
     20
@@ -980,7 +957,6 @@ gtk_box_pack_start(
 );
 
 return outer;
-```
 
 }
 
@@ -990,14 +966,12 @@ gpointer user_data)
 {
 (void)widget;
 
-```
 AppUI *ui = user_data;
 
 if (ui->game)
     game_free(ui->game);
 
 g_free(ui);
-```
 
 }
 
@@ -1005,7 +979,6 @@ void ui_create(GtkApplication *app)
 {
 AppUI *ui = g_new0(AppUI, 1);
 
-```
 ui->language =
     GAME_LANG_AR;
 
