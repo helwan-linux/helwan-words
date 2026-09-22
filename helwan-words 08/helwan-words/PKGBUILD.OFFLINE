@@ -1,0 +1,39 @@
+
+# Maintainer: Saeed Badreldin <helwanlinux@gmail.com>
+#ده PKGBUILD محلي 100%، لا يستخدم GitHub ولا git ولا أي مصدر خارجي. ضعه مباشرة داخل مجلد المشروع helwan-words/ 
+#بجانب Makefile.
+
+pkgname=hel-words
+pkgver=1.0.0
+pkgrel=1
+
+pkgdesc="Multilingual word guessing game for Helwan Linux"
+arch=('x86_64')
+
+license=('GPL3')
+
+depends=('gtk3')
+makedepends=('gcc' 'pkgconf')
+
+source=()
+
+build() {
+    cd "$srcdir"
+
+    make \
+        CFLAGS="-Wall -Wextra -O2 $(pkg-config --cflags gtk+-3.0)" \
+        LIBS="$(pkg-config --libs gtk+-3.0)"
+}
+
+package() {
+    cd "$srcdir"
+
+    make \
+        DESTDIR="$pkgdir" \
+        PREFIX=/usr \
+        install
+
+    install -Dm644 LICENSE/LICENSE \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
