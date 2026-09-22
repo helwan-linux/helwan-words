@@ -1,4 +1,4 @@
-helwan-words/
+https://github.com/helwan-linux/helwan-words
 📁 helwan-words/
 ├── 📁 LICENSE
 │   └── 📄 LICENSE
