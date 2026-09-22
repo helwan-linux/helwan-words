@@ -13,21 +13,22 @@ license=('GPL3')
 depends=('gtk3')
 makedepends=('gcc' 'pkgconf')
 
-source=()
-
 build() {
-    cd "$srcdir"
+    cd "$srcdir/helwan-words"
 
     make \
-        CFLAGS="-Wall -Wextra -Wpedantic -O2 $(pkg-config --cflags gtk+-3.0)" \
+        CFLAGS="-Wall -Wextra -O2 $(pkg-config --cflags gtk+-3.0)" \
         LIBS="$(pkg-config --libs gtk+-3.0)"
 }
 
 package() {
-    cd "$srcdir"
+    cd "$srcdir/helwan-words"
 
-    make DESTDIR="$pkgdir" PREFIX=/usr install
+    make \
+        DESTDIR="$pkgdir" \
+        PREFIX=/usr \
+        install
 
-    install -Dm644 LICENSE \
+    install -Dm644 LICENSE/LICENSE \
         "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
