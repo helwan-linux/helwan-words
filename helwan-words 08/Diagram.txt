@@ -1,0 +1,22 @@
+helwan-words/
+📁 helwan-words/
+├── 📁 LICENSE
+│   └── 📄 LICENSE
+├── 📄 Makefile
+├── 📁 data
+│   ├── 📄 ar.txt
+│   ├── 📄 en.txt
+│   ├── 📄 es.txt
+│   └── 📁 icons
+│       └── 📄 helwan-words.png
+├── 📄 helwan-words.desktop
+├── 📁 resources
+│   └── 📄 helwan-words.css
+└── 📁 src
+    ├── 📄 about.h
+    ├── 📄 game.c
+    ├── 📄 game.h
+    ├── 📄 help.h
+    ├── 📄 main.c
+    ├── 📄 ui.c
+    └── 📄 ui.h
