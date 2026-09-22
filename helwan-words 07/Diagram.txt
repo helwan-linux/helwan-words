@@ -1,0 +1,20 @@
+helwan-words/
+├── src/
+│   ├── main.c
+│   ├── game.c
+│   ├── game.h
+│   ├── ui.c
+│   └── ui.h
+├── data/
+│   ├── ar.txt
+│   ├── en.txt
+│   └── es.txt
+├── data/icons/
+│   └── helwan-words.png
+├── resources/
+│   └── helwan-words.css
+├── Makefile
+├── PKGBUILD
+├── helwan-words.desktop
+├── LICENSE
+└── README.md
