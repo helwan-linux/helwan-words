@@ -11,10 +11,12 @@ url="https://github.com/helwan-linux/helwan-words"
 license=('GPL3')
 
 depends=('gtk3')
-makedepends=('gcc' 'pkgconf')
+makedepends=('gcc' 'pkgconf' 'git')
+
+source=("git+https://github.com/helwan-linux/helwan-words.git")
 
 build() {
-    cd "$srcdir/helwan-words"
+    cd "$srcdir/helwan-words/helwan-words"
 
     make \
         CFLAGS="-Wall -Wextra -O2 $(pkg-config --cflags gtk+-3.0)" \
@@ -22,7 +24,7 @@ build() {
 }
 
 package() {
-    cd "$srcdir/helwan-words"
+    cd "$srcdir/helwan-words/helwan-words"
 
     make \
         DESTDIR="$pkgdir" \
