@@ -1,0 +1,46 @@
+# Maintainer: Saeed Badreldin <saeed@helwanlinux.org>
+
+pkgname=hel-words
+pkgver=1.0.0
+pkgrel=1
+
+pkgdesc="Multilingual word guessing game for Helwan Linux"
+arch=('x86_64')
+
+license=('GPL3')
+
+depends=('gtk3')
+makedepends=('gcc' 'pkgconf')
+
+source=()
+
+build() {
+    rm -rf "$srcdir/helwan-words"
+
+    mkdir -p "$srcdir/helwan-words"
+
+    cp -a "$startdir/Makefile" \
+          "$startdir/helwan-words.desktop" \
+          "$startdir/LICENSE" \
+          "$startdir/data" \
+          "$startdir/resources" \
+          "$startdir/src" \
+          "$srcdir/helwan-words/"
+
+    cd "$srcdir/helwan-words"
+
+    make
+}
+
+package() {
+    cd "$srcdir/helwan-words"
+
+    make \
+        DESTDIR="$pkgdir" \
+        PREFIX=/usr \
+        install
+
+    install -Dm644 LICENSE/LICENSE \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
