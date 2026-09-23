@@ -1,4 +1,4 @@
-```c
+//about.h
 #ifndef HELWAN_WORDS_ABOUT_H
 #define HELWAN_WORDS_ABOUT_H
 
@@ -118,4 +118,4 @@ static inline void show_about_dialog(GtkWindow *parent)
 }
 
 #endif
-```
+

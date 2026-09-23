@@ -1,5 +1,4 @@
-```bash
-# Maintainer: Saeed Badreldin <saeed@helwanlinux.org>
+# Maintainer: Saeed Badreldin <helwanlinux@gmail.com>
 
 pkgname=hel-words
 pkgver=1.0.0
@@ -35,4 +34,4 @@ package() {
     install -Dm644 LICENSE/LICENSE \
         "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-```
+

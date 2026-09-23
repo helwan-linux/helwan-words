@@ -1,3 +1,4 @@
+//help.h
 #ifndef HELWAN_WORDS_HELP_H
 #define HELWAN_WORDS_HELP_H
 

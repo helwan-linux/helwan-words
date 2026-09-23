@@ -1,4 +1,4 @@
-```c
+//ui.c
 #include "ui.h"
 #include "help.h"
 #include "about.h"
@@ -1200,4 +1200,3 @@ void ui_create(GtkApplication *app)
     set_language_direction(ui);
     new_game(ui);
 }
-```

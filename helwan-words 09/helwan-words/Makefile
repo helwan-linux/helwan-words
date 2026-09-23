@@ -1,4 +1,3 @@
-```make
 .RECIPEPREFIX := >
 
 CC = gcc
@@ -37,4 +36,4 @@ install:
 > install -Dm644 data/ar.txt $(DESTDIR)$(PREFIX)/share/helwan-words/data/ar.txt
 > install -Dm644 data/en.txt $(DESTDIR)$(PREFIX)/share/helwan-words/data/en.txt
 > install -Dm644 data/es.txt $(DESTDIR)$(PREFIX)/share/helwan-words/data/es.txt
-```
+
