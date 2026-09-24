@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Helwan Words
+Name[ar]=كلمات حلوان
+Name[es]=Palabras Helwan
+
+Comment=Multilingual word guessing game
+Comment[ar]=لعبة تخمين كلمات متعددة اللغات
+Comment[es]=Juego de adivinar palabras en varios idiomas
+
+Exec=helwan-words
+Icon=helwan-words
+Terminal=false
+Type=Application
+Categories=Game;WordGame;
+StartupNotify=true
